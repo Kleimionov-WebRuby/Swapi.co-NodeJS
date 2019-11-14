@@ -44,6 +44,15 @@ class Swapi {
 
     return personPromise;
   }
+
+  getPersonByName() {
+    this.options.uri = this.url;
+    const personPromise = new Promise((resolve, reject) => {
+      this.getDataFromServer(this.options, resolve, reject);
+    });
+
+    return personPromise;
+  }
 }
 
 module.exports = Swapi;

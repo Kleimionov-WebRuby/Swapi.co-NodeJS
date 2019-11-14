@@ -22,4 +22,14 @@ app.get('/person/:id', async (req, res) => {
   res.status(200).send(person);
 });
 
+app.get('/personByName/:name', async (req, res) => {
+  const name = req.params.name;
+
+  swapi.url = `/people?search=${name}`;
+
+  const person = await swapi.getPersonByName();
+
+  res.status(200).send(person);
+});
+
 app.listen(4000, () => console.log('App is listening on port 4000!'));
