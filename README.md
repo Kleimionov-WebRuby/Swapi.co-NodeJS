@@ -44,7 +44,7 @@ Application requires [Node.js](https://nodejs.org/) v4+ to run.
 Install the dependencies and devDependencies.
 
 ```sh
-$ cd Swapi.co-NodeJS
+$ cd swapi-node
 $ npm install -d
 ```
 
