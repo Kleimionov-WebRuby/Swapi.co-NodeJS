@@ -32,4 +32,12 @@ app.get('/personByName/:name', async (req, res) => {
   res.status(200).send(person);
 });
 
+app.get('/planets', async (req, res) => {
+  swapi.url = '/planets/';
+
+  const planets = await swapi.getPlanets();
+
+  res.status(200).send(planets);
+});
+
 app.listen(4000, () => console.log('App is listening on port 4000!'));
