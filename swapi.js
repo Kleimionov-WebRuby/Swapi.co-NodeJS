@@ -62,6 +62,15 @@ class Swapi {
 
     return planetsPromise;
   }
+
+  getPlanetById() {
+    this.options.uri = this.url;
+    const planetPromise = new Promise((resolve, reject) => {
+      this.getDataFromServer(this.options, resolve, reject);
+    });
+
+    return planetPromise;
+  }
 }
 
 module.exports = Swapi;

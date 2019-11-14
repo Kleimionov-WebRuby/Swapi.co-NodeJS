@@ -40,4 +40,14 @@ app.get('/planets', async (req, res) => {
   res.status(200).send(planets);
 });
 
+app.get('/planet/:id', async (req, res) => {
+  const planetId = req.params.id;
+
+  swapi.url = `/planets/${planetId}`;
+
+  const planet = await swapi.getPlanetById();
+
+  res.status(200).send(planet);
+});
+
 app.listen(4000, () => console.log('App is listening on port 4000!'));
